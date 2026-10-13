@@ -62,6 +62,8 @@
                 "title": "Dettagli dispositivo",
                 "description": "{device_name}Inserisci il nome del dispositivo",
                 "data": {
+                    "mac_address": "Indirizzo MAC (facoltativo)",
+                    "via_device_id": "Dispositivo di collegamento (facoltativo)",
                     "name": "Nome dispositivo"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Impossibile trovare dispositivi non registrati per l'account."
         },
         "error": {
+            "invalid_mac": "Indirizzo MAC non valido.",
+            "invalid_via_device": "Collegamento a dispositivo non valido o ciclico.",
             "connection": "Impossibile connettersi al dispositivo con quei dettagli. Potrebbe essere un problema intermittente o potrebbero essere errati. Se hai selezionato una versione specifica del protocollo, prova invece 'auto'.",
             "does_not_need_hub": "Il dispositivo non necessita di un gateway e ne è stato selezionato uno. ",
             "needs_hub": "Il dispositivo necessita di un gateway e non ne è stato selezionato nessuno."
@@ -92,6 +96,8 @@
                 "title": "Configura il tuo dispositivo Tuya Local",
                 "description": "[Segui queste istruzioni per trovare 'device id' e 'local key'.]({device_details_url})",
                 "data": {
+                    "mac_address": "Indirizzo MAC (facoltativo)",
+                    "via_device_id": "Dispositivo di collegamento (facoltativo)",
                     "host": "Indirizzo IP o hostname",
                     "local_key": "Local key",
                     "protocol_version": "Versione protocollo (prova 'auto' in caso di dubbi)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Indirizzo MAC non valido.",
+            "invalid_via_device": "Collegamento a dispositivo non valido o ciclico.",
             "connection": "Impossibile connettersi al dispositivo con quei dettagli. Potrebbe essere un problema intermittente o potrebbero essere errati. Se hai selezionato una versione specifica del protocollo, prova invece 'auto'."
         },
         "abort": {

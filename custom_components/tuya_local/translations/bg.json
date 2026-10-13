@@ -62,6 +62,8 @@
                 "title": "Подробности за устройството",
                 "description": "{device_name}Изберете име за това устройство",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Име"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Не могат да бъдат намерени нерегистрирани устройства за акаунта."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Не може да се свърже с вашето устройство с тези данни. Възможно е да става въпрос за прекъсване или данните да са неправилни. Ако сте избрали конкретна версия на протокола, опитайте 'auto' вместо това.",
             "does_not_need_hub": "Устройството не се нуждае от шлюз и беше избран такъв. ",
             "needs_hub": "Устройството се нуждае от шлюз и не е избран нито един."
@@ -92,6 +96,8 @@
                 "title": "Конфигуриране на вашето Tuya Local устройство",
                 "description": "[Следвайте тези инструкции, за да откриете своя локален ключ.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP адрес или име на хост",
                     "local_key": "Локален ключ",
                     "protocol_version": "Версия на протокола (опитайте автоматична, ако не е известна)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Не може да се свърже с вашето устройство с тези данни. Възможно е да става въпрос за прекъсване или данните да са неправилни. Ако сте избрали конкретна версия на протокола, опитайте 'auto' вместо това."
         },
         "abort": {

@@ -62,6 +62,8 @@
                 "title": "デバイスの詳細",
                 "description": "{device_name}このデバイスの名前を選択してください",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "名"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "アカウントに未登録のデバイスが見つかりません。"
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "このような詳細ではデバイスに接続できません。 断続的な問題である可能性もありますし、間違っている可能性もあります。特定のプロトコルバージョンを選択した場合は、代わりに「auto」を試してください。",
             "does_not_need_hub": "デバイスにはゲートウェイが必要なく、ゲートウェイが選択されました。",
             "needs_hub": "デバイスにはゲートウェイが必要ですが、ゲートウェイが選択されていません。"
@@ -92,6 +96,8 @@
                 "title": "Tuya Localのデバイスを設定する",
                 "description": "[これらの手順に従ってデバイスIDとローカルキーを見つけてください。]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IPアドレスまたはホスト名",
                     "local_key": "ローカルキー",
                     "protocol_version": "プロトコルのバージョン (不明な場合はAutoを試してください)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "このような詳細ではデバイスに接続できません。 断続的な問題である可能性もありますし、間違っている可能性もあります。特定のプロトコルバージョンを選択した場合は、代わりに「auto」を試してください。"
         },
         "abort": {

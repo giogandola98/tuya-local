@@ -61,6 +61,8 @@
                 "title": "Detalls del dispositiu",
                 "description": "{device_name}Trieu un nom per a aquest dispositiu",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Nom"
                 }
             }
@@ -71,6 +73,8 @@
             "no_devices": "No s'ha pogut trobar cap dispositiu sense registrar per al compte."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "No s'ha pogut connectar al vostre dispositiu amb aquests detalls. Podria ser una qüestió intermitent, o pot ser que siguin incorrectes. Si heu seleccionat una versió específica del protocol, proveu «auto».",
             "needs_hub": "El dispositiu necessita una passarel·la i no se n'ha seleccionat cap.",
             "does_not_need_hub": "El dispositiu no necessita una passarel·la i se n'ha seleccionat una. Reviseu les vostres opcions."
@@ -91,6 +95,8 @@
             "user": {
                 "title": "Configureu el vostre dispositiu Tuya Local",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "Adreça IP o nom d'amfitrió",
                     "local_key": "Clau local",
                     "protocol_version": "Versió del protocol (intenteu-ho automàticament si no es coneix)",
@@ -103,6 +109,8 @@
             "not_supported": "No hi ha suport per a aquest dispositiu."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "No s'ha pogut connectar al vostre dispositiu amb aquests detalls. Podria ser una qüestió intermitent, o pot ser que siguin incorrectes. Si heu seleccionat una versió específica del protocol, proveu «auto»."
         }
     },

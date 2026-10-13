@@ -62,6 +62,8 @@
                 "title": "Szczegóły urządzenia",
                 "description": "{device_name}Wybierz nazwę dla urządzenia",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Nazwa"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Nie udało się znaleźć żadnych niezarejestrowanych urządzeń dla konta."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Nie można podłączyć się do urządzenia z tymi danymi. To może być tymczasowy problem, lub mogą być one nieprawidłowe. Jeśli wybrałeś konkretną wersję protokołu, spróbuj zamiast tego 'auto'.",
             "does_not_need_hub": "Urządzenie nie potrzebuje bramy i taką wybrano. ",
             "needs_hub": "Urządzenie wymaga bramy"
@@ -92,6 +96,8 @@
                 "title": "Skonfiguruj swoje urządzenie Tuya Local",
                 "description": "[Postępuj zgodnie z instrukcjami by znaleźć swój Local key.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "Adres IP lub nazwa hosta",
                     "local_key": "Local key",
                     "protocol_version": "Wersja protokołu (spróbuj auto jeśli nieznana)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Nie można podłączyć się do urządzenia z tymi danymi. To może być tymczasowy problem, lub mogą być one nieprawidłowe. Jeśli wybrałeś konkretną wersję protokołu, spróbuj zamiast tego 'auto'."
         },
         "abort": {

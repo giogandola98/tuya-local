@@ -62,6 +62,8 @@
                 "title": "設備詳情",
                 "description": "{device_name}為此設備選擇一個名稱",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "名稱"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "無法找到該帳戶的任何未註冊設備。"
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "無法使用這些詳細資訊連接到您的裝置。這可能是間歇性問題，或資訊不正確。如果您選擇了特定的協議版本，請改為嘗試'auto'。",
             "does_not_need_hub": "設備不需要網關，但選擇了一個。請檢查您的選擇。",
             "needs_hub": "設備需要網關，但未選擇。"
@@ -92,6 +96,8 @@
                 "title": "配置您的Tuya Local設備",
                 "description": "[請按照這些說明找到您的 Local key]({devide_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP位址或主機名",
                     "local_key": "Local key",
                     "protocol_version": "協議版本（如果不清楚，請選擇自動）",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "無法使用這些詳細資訊連接到您的裝置。這可能是間歇性問題，或資訊不正確。如果您選擇了特定的協議版本，請改為嘗試'auto'。"
         },
         "abort": {

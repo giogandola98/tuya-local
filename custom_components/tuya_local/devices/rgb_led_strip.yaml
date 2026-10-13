@@ -21,6 +21,10 @@ products:
   - id: iiwnhv4jk3u3tfcv
     manufacturer: Neuro-sama
     model: Lava lamp
+  - id: blrilhigsvadgp0o
+    manufacturer: LSC Smart Connect
+    model: Stringlight WW
+    model_id: "6025000200"
 entities:
   - entity: light
     dps:
@@ -39,6 +43,8 @@ entities:
             value: "off"
           - dps_val: scene
             value: Scene
+          - dps_val: music
+            value: Music
           - dps_val: null
             value: "off"
             hidden: true

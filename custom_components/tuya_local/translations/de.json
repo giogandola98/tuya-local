@@ -62,6 +62,8 @@
                 "title": "Gerätename",
                 "description": "{device_name}Wählen Sie einen Namen für dieses Gerät aus.",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Gerätename"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Für das Konto konnten keine nicht registrierten Geräte gefunden werden."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Mit diesen Angaben kann keine Verbindung zu Ihrem Gerät hergestellt werden. Es könnte sich um ein intermittierendes Problem handeln, oder die Angaben sind falsch. Wenn Sie eine bestimmte Protokollversion ausgewählt haben, versuchen Sie stattdessen 'auto'.",
             "does_not_need_hub": "Das Gerät benötigt kein Gateway und es wurde eines ausgewählt. ",
             "needs_hub": "Das Gerät benötigt ein Gateway und es wurde keines ausgewählt."
@@ -92,6 +96,8 @@
                 "title": "Konfigurieren Sie Ihr Tuya Local Gerät",
                 "description": "[Folgen Sie diesen Anweisungen, um Ihren lokalen Schlüssel zu finden.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP-Adresse oder Host-Name",
                     "local_key": "Lokaler Schlüssel",
                     "protocol_version": "Protokollversion (versuchen Sie auto, falls nicht bekannt)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Mit diesen Angaben kann keine Verbindung zu Ihrem Gerät hergestellt werden. Es könnte sich um ein intermittierendes Problem handeln, oder die Angaben sind falsch. Wenn Sie eine bestimmte Protokollversion ausgewählt haben, versuchen Sie stattdessen 'auto'."
         },
         "abort": {

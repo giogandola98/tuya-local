@@ -62,6 +62,8 @@
                 "title": "Detalhes do dispositivo",
                 "description": "{device_name}Escolha um nome para este dispositivo",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Nome"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Não foi possível encontrar nenhum dispositivo ainda não registado para a conta."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Não foi possível conectar ao seu dispositivo com esses detalhes. Pode ser um problema intermitente ou eles podem estar incorretos. Se você selecionou uma versão de protocolo específica, tente 'auto' em vez disso.",
             "does_not_need_hub": "O dispositivo não precisa de gateway mas um foi selecionado. ",
             "needs_hub": "O dispositivo precisa de um gateway e nenhum foi selecionado."
@@ -92,6 +96,8 @@
                 "title": "Configure seu dispositivo Tuya Local",
                 "description": "[Siga estas instruções para encontrar o ID do seu dispositivo e a chave local.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "Endereço IP ou nome do host",
                     "local_key": "Chave Local",
                     "protocol_version": "Versão do protocolo (experimente auto se não souber)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Não foi possível conectar ao seu dispositivo com esses detalhes. Pode ser um problema intermitente ou eles podem estar incorretos. Se você selecionou uma versão de protocolo específica, tente 'auto' em vez disso."
         },
         "abort": {

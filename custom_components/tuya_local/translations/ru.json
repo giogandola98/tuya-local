@@ -62,6 +62,8 @@
                 "title": "Сведения об устройстве",
                 "description": "{device_name}Выберите имя для этого устройства",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Имя"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Не удалось найти незарегистрированные устройства для учетной записи."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Не удается подключиться к вашему устройству с этими данными. Это может быть временная проблема, или они могут быть неверными. Если вы выбрали определенную версию протокола, попробуйте 'auto' вместо этого.",
             "does_not_need_hub": "Устройству не нужен шлюз",
             "needs_hub": "Устройству нужен шлюз"
@@ -92,6 +96,8 @@
                 "title": "Настройка устройства Tuya Local",
                 "description": "[Следуйте этим инструкциям, чтобы найти идентификатор устройства и локальный ключ.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP-адрес или имя хоста",
                     "local_key": "Локальный ключ",
                     "protocol_version": "Версия протокола (попробуйте auto, если не уверены)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Не удается подключиться к вашему устройству с этими данными. Это может быть временная проблема, или они могут быть неверными. Если вы выбрали определенную версию протокола, попробуйте 'auto' вместо этого."
         },
         "abort": {

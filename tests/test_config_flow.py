@@ -8,6 +8,7 @@ from homeassistant.const import CONF_HOST, CONF_NAME
 from homeassistant.data_entry_flow import FlowResultType
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers.selector import SelectSelector, SelectSelectorMode
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
 from custom_components.tuya_local import (
@@ -599,6 +600,9 @@ async def test_flow_select_type_init(hass, mocker):
         "preview": mocker.ANY,
     }
     assert expected == result
+    type_selector = next(iter(result["data_schema"].schema.values()))
+    assert isinstance(type_selector, SelectSelector)
+    assert type_selector.config["mode"] == SelectSelectorMode.DROPDOWN
     # Check the schema.  Simple comparison does not work since they are not
     # the same object
     try:

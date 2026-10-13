@@ -62,6 +62,8 @@
                 "title": "Details appareil",
                 "description": "{device_name}Choisissez un nom pour cet appareil",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Nom"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Impossible de trouver des appareils non enregistrés pour le compte."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Impossible de se connecter à votre appareil avec ces détails. Il peut s'agir d'un problème intermittent, ou ils peuvent être incorrects. Si vous avez sélectionné une version de protocole spécifique, essayez 'auto' à la place.",
             "does_not_need_hub": "L'appareil n'a pas besoin de passerelle et une a été sélectionnée. ",
             "needs_hub": "L'appareil a besoin d'une passerelle et aucune n'a été sélectionnée."
@@ -92,6 +96,8 @@
                 "title": "Configurer votre appareil Tuya Local",
                 "description": "[Suivre ces instructions pour trouver le 'device id' et la 'local key'.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "Adresse IP ou Nom d'hote",
                     "local_key": "Local key",
                     "protocol_version": "Version du Protocole (Auto si inconnu)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Impossible de se connecter à votre appareil avec ces détails. Il peut s'agir d'un problème intermittent, ou ils peuvent être incorrects. Si vous avez sélectionné une version de protocole spécifique, essayez 'auto' à la place."
         },
         "abort": {

@@ -15,16 +15,19 @@ from homeassistant.const import (
     EVENT_HOMEASSISTANT_STOP,
 )
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.helpers import device_registry as dr
 
 from .const import (
     API_PROTOCOL_VERSIONS,
     CONF_DEVICE_CID,
     CONF_DEVICE_ID,
     CONF_LOCAL_KEY,
+    CONF_MAC_ADDRESS,
     CONF_MANUFACTURER,
     CONF_MODEL,
     CONF_POLL_ONLY,
     CONF_PROTOCOL_VERSION,
+    CONF_VIA_DEVICE_ID,
     DOMAIN,
 )
 from .helpers.config import get_device_id
@@ -60,6 +63,8 @@ class TuyaLocalDevice(object):
         poll_only=False,
         manufacturer=None,
         model=None,
+        mac_address=None,
+        via_device_id=None,
     ):
         """
         Represents a Tuya-based device.
@@ -79,6 +84,8 @@ class TuyaLocalDevice(object):
         self._name = name
         self._manufacturer = manufacturer
         self._model = model
+        self._mac_address = mac_address
+        self._via_device_id = via_device_id
         self._children = []
         self._force_dps = []
         self._product_ids = []
@@ -188,6 +195,10 @@ class TuyaLocalDevice(object):
         }
         if self._model:
             info["model"] = self._model
+        if self._mac_address:
+            info["connections"] = {(dr.CONNECTION_NETWORK_MAC, self._mac_address)}
+        if self._via_device_id:
+            info["via_device_id"] = self._via_device_id
         return info
 
     @property
@@ -855,6 +866,8 @@ def setup_device(hass: HomeAssistant, config: dict):
         config[CONF_POLL_ONLY],
         manufacturer=config.get(CONF_MANUFACTURER),
         model=config.get(CONF_MODEL),
+        mac_address=config.get(CONF_MAC_ADDRESS),
+        via_device_id=config.get(CONF_VIA_DEVICE_ID),
     )
     hass.data[DOMAIN][get_device_id(config)] = {
         "device": device,

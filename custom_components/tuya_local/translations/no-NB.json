@@ -62,6 +62,8 @@
                 "title": "Enhetsdetaljer",
                 "description": "{device_name}Angi et navn for din enhet",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Navn"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Kan ikke finne noen uregistrerte enheter for kontoen."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Kunne ikke koble til enheten med de angitte detaljene. Det kan være en midlertidig feil, eller feil med detaljene angitt. Hvis du valgte en spesifikk protokollversjon, prøv 'auto' i stedet.",
             "does_not_need_hub": "Enheten trenger ikke en gateway",
             "needs_hub": "Enheten trenger en gateway"
@@ -92,6 +96,8 @@
                 "title": "Konfigurer din lokale Tuya enhet",
                 "description": "[Følg instruksjonene her for å finne enhets-id og den lokale nøkkelen.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP addresse eller vertsnavn",
                     "local_key": "Lokal nøkkel",
                     "protocol_version": "Protocol versjon (prøv auto hvis du der usikker)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Kunne ikke koble til enheten med de angitte detaljene. Det kan være en midlertidig feil, eller feil med detaljene angitt. Hvis du valgte en spesifikk protokollversjon, prøv 'auto' i stedet."
         },
         "abort": {

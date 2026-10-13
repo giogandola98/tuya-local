@@ -15,6 +15,7 @@ from homeassistant.const import CONF_HOST, CONF_NAME
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.helpers.selector import (
+    DeviceSelector,
     QrCodeSelector,
     QrCodeSelectorConfig,
     QrErrorCorrectionLevel,
@@ -31,17 +32,20 @@ from .const import (
     CONF_DEVICE_CID,
     CONF_DEVICE_ID,
     CONF_LOCAL_KEY,
+    CONF_MAC_ADDRESS,
     CONF_MANUFACTURER,
     CONF_MODEL,
     CONF_POLL_ONLY,
     CONF_PROTOCOL_VERSION,
     CONF_TYPE,
     CONF_USER_CODE,
+    CONF_VIA_DEVICE_ID,
     DATA_STORE,
 )
 from .device import TuyaLocalDevice
 from .helpers.config import get_device_id
 from .helpers.device_config import get_config
+from .helpers.device_metadata import update_metadata, validate_metadata
 from .helpers.log import log_json
 
 _LOGGER = logging.getLogger(__name__)
@@ -555,7 +559,12 @@ class ConfigFlowHandler(ConfigFlow, domain=DOMAIN):
                     vol.Required(
                         CONF_TYPE,
                         default=best_matching_key,
-                    ): SelectSelector(SelectSelectorConfig(options=type_options)),
+                    ): SelectSelector(
+                        SelectSelectorConfig(
+                            options=type_options,
+                            mode=SelectSelectorMode.DROPDOWN,
+                        )
+                    ),
                 }
             )
             if detected:
@@ -581,24 +590,34 @@ class ConfigFlowHandler(ConfigFlow, domain=DOMAIN):
         return await self.async_step_select_type(user_input)
 
     async def async_step_choose_entities(self, user_input=None):
+        errors = {}
         config = await self.hass.async_add_executor_job(
             get_config,
             self.data[CONF_TYPE],
         )
         if user_input is not None:
-            title = user_input[CONF_NAME]
-            del user_input[CONF_NAME]
-            return self.async_create_entry(
-                title=title, data={**self.data, **user_input}
-            )
+            errors = validate_metadata(self.hass, self.data, user_input)
+            if not errors:
+                details = dict(user_input)
+                title = details.pop(CONF_NAME)
+                return self.async_create_entry(
+                    title=title, data={**self.data, **details}
+                )
         default_name = config.name
         if self.__discovered_device and self.__discovered_device.get("name"):
             default_name = self.__discovered_device["name"]
-        schema = {vol.Required(CONF_NAME, default=default_name): str}
+        schema = {
+            vol.Required(CONF_NAME, default=default_name): str,
+            vol.Optional(CONF_MAC_ADDRESS): str,
+            vol.Optional(CONF_VIA_DEVICE_ID): DeviceSelector(),
+        }
 
         return self.async_show_form(
             step_id="choose_entities",
-            data_schema=vol.Schema(schema),
+            data_schema=self.add_suggested_values_to_schema(
+                vol.Schema(schema), user_input or {}
+            ),
+            errors=errors or None,
             description_placeholders={
                 "device_name": self._device_name_placeholder,
             },
@@ -624,17 +643,29 @@ class OptionsFlowHandler(OptionsFlow):
         config = {**self.config_entry.data, **self.config_entry.options}
 
         if user_input is not None:
+            errors = validate_metadata(self.hass, config, user_input)
             proto = user_input.get(CONF_PROTOCOL_VERSION)
             if proto != "auto":
                 user_input[CONF_PROTOCOL_VERSION] = float(proto)
             config = {**config, **user_input}
-            device = await async_test_connection(config, self.hass)
-            if device:
+            device = (
+                await async_test_connection(config, self.hass) if not errors else None
+            )
+            if device and not errors:
+                update_metadata(
+                    self.hass,
+                    {**self.config_entry.data, **self.config_entry.options},
+                    user_input,
+                )
                 return self.async_create_entry(title="", data=user_input)
-            else:
+            elif not device and not errors:
                 errors["base"] = "connection"
 
         schema = {
+            vol.Optional(
+                CONF_MAC_ADDRESS, default=config.get(CONF_MAC_ADDRESS, "")
+            ): str,
+            vol.Optional(CONF_VIA_DEVICE_ID): DeviceSelector(),
             vol.Required(
                 CONF_LOCAL_KEY,
                 default=config.get(CONF_LOCAL_KEY, ""),
@@ -657,7 +688,12 @@ class OptionsFlowHandler(OptionsFlow):
 
         return self.async_show_form(
             step_id="user",
-            data_schema=vol.Schema(schema),
+            data_schema=self.add_suggested_values_to_schema(
+                vol.Schema(schema),
+                {CONF_VIA_DEVICE_ID: config[CONF_VIA_DEVICE_ID]}
+                if config.get(CONF_VIA_DEVICE_ID)
+                else {},
+            ),
             description_placeholders={"device_details_url": DEVICE_DETAILS_URL},
             errors=errors,
         )

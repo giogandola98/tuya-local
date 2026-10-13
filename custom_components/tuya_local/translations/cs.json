@@ -62,6 +62,8 @@
                 "title": "Podrobnosti o zařízení",
                 "description": "{device_name}Vyberte jméno pro toto zařízení",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Jméno"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Nelze najít žádná neregistrovaná zařízení pro účet."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Není možné připojit se k zařízené s těmito údaji. Může se jednat o dočasný problém, nebo zadané údaje nejsou správné. Pokud jste vybrali konkrétní verzi protokolu, zkuste místo toho 'auto'.",
             "does_not_need_hub": "Zařízení nepotřebuje bránu a byla vybrána. ",
             "needs_hub": "Zařízení potřebuje bránu a žádná nebyla vybrána."
@@ -92,6 +96,8 @@
                 "title": "Nastavte sve lokální zařízení Tuya",
                 "description": "[Postupujte podle tohoto návodu pro získaní lokálního klíče (local_key) zařízení.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP adresa nebo název hostitele (hostname)",
                     "local_key": "lokální klíč (local_key)",
                     "protocol_version": "Verze protokolu (zkuste auto pokud ji neznáte)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Není možné připojit se k zařízené s těmito údaji. Může se jednat o dočasný problém, nebo zadané údaje nejsou správné. Pokud jste vybrali konkrétní verzi protokolu, zkuste místo toho 'auto'."
         },
         "abort": {

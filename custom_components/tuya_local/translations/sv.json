@@ -62,6 +62,8 @@
                 "title": "Enhetsdetaljer",
                 "description": "{device_name}Välj ett namn för enheten",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Namn"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Kan inte hitta några oregistrerade enheter för kontot."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Kan inte ansluta till din enhet med dessa uppgifter. Det kan vara ett intermittent problem, eller så kan de vara felaktiga. Om du valde en specifik protokollversion, prova 'auto' istället.",
             "does_not_need_hub": "Enheten behöver ingen gateway och en valdes. Vänligen granska dina val.",
             "needs_hub": "Enheten behöver en gateway och ingen valdes."
@@ -92,6 +96,8 @@
                 "title": "Konfigurera din Tuya Local-enhet",
                 "description": "[Följ dessa instruktioner för att hitta din lokala nyckel.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP-adress eller värdnamn",
                     "local_key": "Lokal nyckel",
                     "protocol_version": "Protokollversion (prova auto om okänd)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Kan inte ansluta till din enhet med dessa uppgifter. Det kan vara ett intermittent problem, eller så kan de vara felaktiga. Om du valde en specifik protokollversion, prova 'auto' istället."
         },
         "abort": {

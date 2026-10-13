@@ -62,6 +62,8 @@
                 "title": "Eszköz részletei",
                 "description": "{device_name}Válasz egy nevet az eszköznek",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Név"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Nem található a fiókhoz nem regisztrált eszköz."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "A megadott adatokkal nem sikerült kapcsolódni az eszközhöz. Lehet ideiglenes a probléma, vagy nem megfelelőek a megadott adatok. Ha egy adott protokoll verziót választottál, próbáld meg 'auto'-ra állítani.",
             "does_not_need_hub": "Az eszköznek nincs szüksége átjáróra",
             "needs_hub": "Az eszköznek átjáróra van szüksége"
@@ -92,6 +96,8 @@
                 "title": "Állítsd be a helyi Tuya eszközödet",
                 "description": "[Kövesd ezeket az utasításokat, hogy megtalált a helyi kulcsot (local_key).]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "IP cím vagy állomásnév",
                     "local_key": "Helyi kulcs (local_key)",
                     "protocol_version": "Protokol verzió (hagyd auto-n, ha nem tudod)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "A megadott adatokkal nem sikerült kapcsolódni az eszközhöz. Lehet ideiglenes a probléma, vagy nem megfelelőek a megadott adatok. Ha egy adott protokoll verziót választottál, próbáld meg 'auto'-ra állítani."
         },
         "abort": {

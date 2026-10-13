@@ -62,6 +62,8 @@
                 "title": "Λεπτομέρειες συσκευής",
                 "description": "{device_name}Επιλέξτε ένα όνομα για αυτή τη συσκευή",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "name": "Όνομα"
                 }
             }
@@ -72,6 +74,8 @@
             "no_devices": "Αδυναμία εύρεσης μη εγγεγραμμένων συσκευών για αυτό το λογαριασμό."
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Αδυναμία σύνδεσης στη συσκευή σας με αυτά τα στοιχεία. Ίσως είναι προσωρινό πρόβλημα, ή τα στοιχεία που καταχωρίσατε είναι λάθος. Αν επιλέξατε μια συγκεκριμένη έκδοση πρωτοκόλλου, δοκιμάστε 'auto' αντί για αυτήν.",
             "does_not_need_hub": "Η συσκευή δεν χρειάζεται κάποιο gateway και επιλέχτηκε ένα. Παρακαλώ ελέγξτε τις επιλογές.",
             "needs_hub": "Η συσκευή χρειάζεται gateway και δεν επιλέχτηκε κάποιο."
@@ -92,6 +96,8 @@
                 "title": "Ρυθμίστε τη συσκευή σας Tuya Local",
                 "description": "[Ακολουθήστε αυτές τις οδηγίες για να βρείτε το local key.]({device_details_url})",
                 "data": {
+                    "mac_address": "MAC address (optional)",
+                    "via_device_id": "Via device (optional)",
                     "host": "Διεύθυνση IP ή όνομα",
                     "local_key": "Local key",
                     "protocol_version": "Έκδοση Πρωτοκόλλου (δοκιμάστε αυτόματο (auto) αν δεν το γνωρίζετε)",
@@ -100,6 +106,8 @@
             }
         },
         "error": {
+            "invalid_mac": "Invalid MAC address.",
+            "invalid_via_device": "Invalid or cyclic device relationship.",
             "connection": "Αδυναμία σύνδεσης στη συσκευή σας με αυτά τα στοιχεία. Ίσως είναι προσωρινό πρόβλημα, ή τα στοιχεία που καταχωρίσατε είναι λάθος. Αν επιλέξατε μια συγκεκριμένη έκδοση πρωτοκόλλου, δοκιμάστε 'auto' αντί για αυτήν."
         },
         "abort": {
